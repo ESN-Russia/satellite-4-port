@@ -69,6 +69,7 @@ const ItemImage = styled.img`
   height: 60px;
   border-radius: 5px;
   border: 1px solid #eee;
+  box-sizing: content-box;
 `;
 
 const ItemTitle = styled.a`
