@@ -8,10 +8,10 @@ const MenuItems = ["Home", "About", "News", "Projects", "Partners", "Contact"];
 const EsnNavBar = () => (
   <NavBarWrapper>
     <SectionSelectorWrapper>
-      <span style={{ cursor: "pointer" }}>ESN Russia</span>
-      <span style={{ cursor: "pointer" }}>ESN HSE MSK</span>
-      <span style={{ cursor: "pointer" }}>ESN Ural Federal</span>
-      <span style={{ cursor: "pointer" }}>ESN SFTU</span>
+      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Russia</span>
+      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN HSE MSK</span>
+      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Ural Federal</span>
+      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN SFTU</span>
     </SectionSelectorWrapper>
     <BottomWrapper>
       <Logo src="/RU-DIGITAL-COLOR.png" />
@@ -46,6 +46,7 @@ const BottomWrapper = styled.div`
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const Logo = styled.img`
@@ -57,6 +58,7 @@ const Logo = styled.img`
 const BottomMenuWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
 `;
 
 export default EsnNavBar;

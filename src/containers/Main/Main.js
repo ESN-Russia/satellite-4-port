@@ -8,8 +8,8 @@ import EsnContainer from "../../components/EsnContainer";
 
 const Main = () => (
   <EsnContainer style={{ padding: "20px 0" }}>
-    <Grid columns={3}>
-      <Grid.Column>
+    <Grid relaxed container>
+      <Grid.Column mobile={16} computer={5}>
         <Label ribbon color="orange" size="large">
           NEWS
         </Label>
@@ -23,7 +23,7 @@ const Main = () => (
           </ItemContainer>
         ))}
       </Grid.Column>
-      <Grid.Column>
+      <Grid.Column mobile={16} computer={5}>
         <Label ribbon color="green" size="large">
           PAST EVENTS
         </Label>
@@ -37,7 +37,7 @@ const Main = () => (
           </ItemContainer>
         ))}
       </Grid.Column>
-      <Grid.Column>
+      <Grid.Column mobile={16} computer={5}>
         <Label ribbon color="blue" size="large">
           PARTNERS
         </Label>

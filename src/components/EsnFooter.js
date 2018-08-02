@@ -28,7 +28,9 @@ const EsnFooter = () => (
         src="https://satellite.esn.org/profiles/iss/themes/esnbase/img/itcom_logo.png"
         alt=""
       />
-      <span style={{ flex: 1 }}>This site is made by the IT committee of ESN International</span>
+      <span style={{ flex: 1, padding: 5 }}>
+        This site is made by the IT committee of ESN International
+      </span>
       <div>
         Gracefully ported by{" "}
         <a style={{ color: "#999" }} href="//fb.me/4ndr35oko1/">
@@ -52,7 +54,7 @@ const UpperFooter = styled.div`
   max-width: 100vw;
 
   color: #bbb;
-  padding: 10px 0;
+  padding: 10px;
 
   font-size: 13px;
   line-height: 18px;
@@ -62,12 +64,13 @@ const LowerFooter = styled.div`
   margin: 0 auto;
   width: 960px;
   max-width: 100vw;
-  padding: 10px 0;
+  padding: 10px;
 
   font-size: 12px;
 
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 
