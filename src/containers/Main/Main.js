@@ -1,61 +1,79 @@
 import React from "react";
-import { Grid, Label } from "semantic-ui-react";
 import _ from "lodash";
 import styled from "styled-components";
 
+import { Grid, Label, Container, Segment, Header } from "semantic-ui-react";
+
+import EsnVKWidget from "../../components/EsnVKWidget";
+import EsnFBWidget from "../../components/EsnFBWidget";
 import tempData from "../../tempData";
-import EsnContainer from "../../components/EsnContainer";
 
 const Main = () => (
-  <EsnContainer style={{ padding: "20px 0" }}>
-    <Grid relaxed container>
-      <Grid.Column mobile={16} computer={5}>
-        <Label ribbon color="orange" size="large">
-          NEWS
-        </Label>
-        {_.map(tempData.news, item => (
-          <ItemContainer>
-            <ItemImage src={item.img} />
-            <div>
-              <ItemDate>{item.date}</ItemDate>
-              <ItemTitle color="orange">{item.title}</ItemTitle>
-            </div>
-          </ItemContainer>
-        ))}
-      </Grid.Column>
-      <Grid.Column mobile={16} computer={5}>
-        <Label ribbon color="green" size="large">
-          PAST EVENTS
-        </Label>
-        {_.map(tempData.pastEvents, item => (
-          <ItemContainer>
-            <ItemImage src={item.img} />
-            <div>
-              <ItemDate>{item.date}</ItemDate>
-              <ItemTitle color="green">{item.title}</ItemTitle>
-            </div>
-          </ItemContainer>
-        ))}
-      </Grid.Column>
-      <Grid.Column mobile={16} computer={5}>
-        <Label ribbon color="blue" size="large">
-          PARTNERS
-        </Label>
-        {_.map(tempData.partners, item => (
-          <ItemContainer>
-            <ItemImage src={item.img} />
-            <div style={{ paddingTop: 25 }}>
-              <ItemTitle color="blue">{item.title}</ItemTitle>
-              <br />
-              <ItemTitle color="blue" style={{ fontSize: 12 }}>
-                {item.subtitle}
-              </ItemTitle>
-            </div>
-          </ItemContainer>
-        ))}
-      </Grid.Column>
-    </Grid>
-  </EsnContainer>
+  <Container>
+    <Segment vertical padded="very">
+      <Header as="h1">Follow us on social media</Header>
+      <Grid columns="equal" stackable>
+        <Grid.Row>
+          <Grid.Column>
+            <EsnVKWidget />
+          </Grid.Column>
+          <Grid.Column>
+            <EsnFBWidget />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
+    <Segment vertical padded="very">
+      <Grid relaxed container>
+        <Grid.Column mobile={16} computer={5}>
+          <Label ribbon color="orange" size="large">
+            NEWS
+          </Label>
+          {_.map(tempData.news, item => (
+            <ItemContainer>
+              <ItemImage src={item.img} />
+              <div>
+                <ItemDate>{item.date}</ItemDate>
+                <ItemTitle color="orange">{item.title}</ItemTitle>
+              </div>
+            </ItemContainer>
+          ))}
+        </Grid.Column>
+        <Grid.Column mobile={16} computer={5}>
+          <Label ribbon color="green" size="large">
+            PAST EVENTS
+          </Label>
+          {_.map(tempData.pastEvents, item => (
+            <ItemContainer>
+              <ItemImage src={item.img} />
+              <div>
+                <ItemDate>{item.date}</ItemDate>
+                <ItemTitle color="green">{item.title}</ItemTitle>
+              </div>
+            </ItemContainer>
+          ))}
+        </Grid.Column>
+        <Grid.Column mobile={16} computer={5}>
+          <Label ribbon color="blue" size="large">
+            PARTNERS
+          </Label>
+          {_.map(tempData.partners, item => (
+            <ItemContainer>
+              <ItemImage src={item.img} />
+              <div style={{ paddingTop: 25 }}>
+                <ItemTitle color="blue">{item.title}</ItemTitle>
+                <br />
+                <ItemTitle color="blue" style={{ fontSize: 12 }}>
+                  {item.subtitle}
+                </ItemTitle>
+              </div>
+            </ItemContainer>
+          ))}
+        </Grid.Column>
+      </Grid>
+    </Segment>
+  </Container>
 );
 
 const ItemContainer = styled.div`
