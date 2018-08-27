@@ -7,6 +7,8 @@ import EsnNavBar from "./components/EsnNavBar";
 import EsnFooter from "./components/EsnFooter";
 
 import Main from "./containers/Main/Main";
+import Board from "./containers/Board/Board";
+import About from "./containers/About/About";
 
 class App extends Component {
   state = {}; // FIXME
@@ -17,6 +19,8 @@ class App extends Component {
         <EsnNavBar />
         <Switch>
           <Route exact path="/" component={Main} />
+          <Route exact path="/board" component={Board} />
+          <Route exact path="/about" component={About} />
         </Switch>
         <EsnFooter />
       </div>

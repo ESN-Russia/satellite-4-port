@@ -1,9 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Container } from "semantic-ui-react";
 import EsnMenuButton from "./EsnMenuButton";
 
-const MenuItems = ["Home", "About", "News", "Projects", "Partners", "Contact"];
+const MenuItems = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Board", href: "/board" },
+  // "News",
+  // "Projects",
+  // "Partners",
+  // "Contact",
+];
 
 const EsnNavBar = () => (
   <NavBarWrapper>
@@ -15,7 +24,7 @@ const EsnNavBar = () => (
     </SectionSelectorWrapper>
     <BottomWrapper>
       <Logo src="/RU-DIGITAL-COLOR.png" />
-      <BottomMenuWrapper>{MenuItems.map(item => <EsnMenuButton title={item} />)}</BottomMenuWrapper>
+      <BottomMenuWrapper>{MenuItems.map(item => <EsnMenuButton item={item} />)}</BottomMenuWrapper>
     </BottomWrapper>
   </NavBarWrapper>
 );
@@ -38,13 +47,10 @@ const SectionSelectorWrapper = styled.div`
   padding: 16px 0 10px 0;
 `;
 
-const BottomWrapper = styled.div`
-  margin: 0 auto;
-  padding: 10px 0;
-  width: 960px;
-  max-width: 100vw;
-
-  display: flex;
+const BottomWrapper = styled(Container)`
+  padding: 1em 0;
+  display: flex !important;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 `;

@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const EsnMenuButton = ({ title }) => <ButtonContainer>{title}</ButtonContainer>;
+const EsnMenuButton = ({ item }) => (
+  <Link to={item.href}>
+    <ButtonContainer>{item.title}</ButtonContainer>
+  </Link>
+);
 
 const ButtonContainer = styled.div`
   color: #bbb;
