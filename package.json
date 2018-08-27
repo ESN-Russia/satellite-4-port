@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
     "lodash": "^4.17.10",
     "momentjs": "^2.0.0",
     "react": "^16.4.1",
@@ -19,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node server/index.js",
     "build": "react-scripts build",
     "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom",
@@ -37,8 +40,8 @@
     "prettier": "^1.13.7",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "webpack": "^4.14.0",
-    "redux-devtools-extension": "^2.13.5"
+    "redux-devtools-extension": "^2.13.5",
+    "webpack": "^4.14.0"
   },
   "lint-staged": {
     "*.js": [
