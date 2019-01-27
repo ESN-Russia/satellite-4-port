@@ -1,20 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { Container } from "semantic-ui-react";
 import EsnMenuButton from "./EsnMenuButton";
 
-const MenuItems = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Board", href: "/board" },
-  // "News",
-  // "Projects",
-  // "Partners",
-  // "Contact",
-];
+// const MenuItems = [
+//   { title: "Home", href: "/" },
+//   { title: "About", href: "/about" },
+//   { title: "Board", href: "/board" },
+//   // "News",
+//   // "Projects",
+//   // "Partners",
+//   // "Contact",
+// ];
 
-const EsnNavBar = () => (
+const EsnNavBar = ({ menuItems }) => (
   <NavBarWrapper>
     <SectionSelectorWrapper>
       <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Russia</span>
@@ -24,7 +25,7 @@ const EsnNavBar = () => (
     </SectionSelectorWrapper>
     <BottomWrapper>
       <Logo src="/RU-DIGITAL-COLOR.png" />
-      <BottomMenuWrapper>{MenuItems.map(item => <EsnMenuButton item={item} />)}</BottomMenuWrapper>
+      <BottomMenuWrapper>{menuItems.map(item => <EsnMenuButton item={item} />)}</BottomMenuWrapper>
     </BottomWrapper>
   </NavBarWrapper>
 );
@@ -67,4 +68,6 @@ const BottomMenuWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export default EsnNavBar;
+const mapStateToProps = ({ menuItems }) => ({ menuItems });
+
+export default connect(mapStateToProps)(EsnNavBar);

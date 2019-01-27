@@ -1,3 +1,50 @@
+const t = `
+# Live demo
+
+Changes are automatically rendered as you type.
+
+* Implements [GitHub Flavored Markdown](https://github.github.com/gfm/)
+* Renders actual, "native" React DOM elements
+* Allows you to escape or skip HTML (try toggling the checkboxes above)
+* If you escape or skip the HTML, no \`dangerouslySetInnerHTML\` is used! Yay!
+
+## HTML block below
+
+<blockquote>
+  This blockquote will change based on the HTML settings above.
+</blockquote>
+
+## How about some code?
+\`\`\`js
+var React = require('react');
+var Markdown = require('react-markdown');
+
+React.render(
+  <Markdown source="# Your markdown here" />,
+  document.getElementById('content')
+);
+\`\`\`
+
+Pretty neat, eh?
+
+## Tables?
+
+| Feature   | Support |
+| --------- | ------- |
+| tables    | ✔ |
+| alignment | ✔ |
+| wewt      | ✔ |
+
+## More info?
+
+Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)
+
+---------------
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
+A component by [Espen Hovlandsdal](https://espen.codes/)`;
+
 export default {
   loading: false,
   boards: {
@@ -65,4 +112,14 @@ export default {
         "The symbol of ESN Russia, that appears on our logo, is a colorful Fire-bird, a well-known character of Slavonic folklore. In Russian fairy-tales a Fire-bird is always a creature from faraway lands, getting acquainted with which usually gets the main character involved in many unpredictable and exciting adventures and broadens their personal intellectual horizons. We believe that it represents our will to explore different cultures, travel and gain valuable international experiences.",
     },
   ],
+  menuItems: [
+    { title: "Home", url: "/" },
+    { title: "Board", url: "/board" },
+    { title: "Sample", url: "/sample_page" },
+    { title: "404", url: "/404" },
+    { title: "About", url: "/about" },
+  ],
+  pages: {
+    "/sample_page": t,
+  },
 };

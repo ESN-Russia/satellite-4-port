@@ -9,6 +9,7 @@ import EsnFooter from "./components/EsnFooter";
 import Main from "./containers/Main/Main";
 import Board from "./containers/Board/Board";
 import About from "./containers/About/About";
+import Page from "./containers/Page/Page";
 
 class App extends Component {
   state = {}; // FIXME
@@ -21,6 +22,8 @@ class App extends Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/board" component={Board} />
           <Route exact path="/about" component={About} />
+
+          <Route path="/" component={Page} />
         </Switch>
         <EsnFooter />
       </div>
