@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import styled from "styled-components";
 
-import { Grid, Label, Container, Segment, Header } from "semantic-ui-react";
+import { Grid, Label, Container, Segment, Header, Message } from "semantic-ui-react";
 
 import EsnVKWidget from "../../components/EsnVKWidget";
 import EsnFBWidget from "../../components/EsnFBWidget";
@@ -10,8 +10,17 @@ import tempData from "../../tempData";
 
 const Main = () => (
   <Container>
+    <Message
+      style={{ marginTop: 50 }}
+      icon="shipping fast"
+      warning
+      header="🚧 🚧 This is only a construction site here 🚧 🚧"
+      content="👷 🚚 But we are launching soon 👷 🏗️"
+      size="huge"
+    />
+
     <Segment vertical padded="very">
-      <Header as="h1">Follow us on social media</Header>
+      <Header as="h2">You still can follow us on social media</Header>
       <Grid columns="equal" stackable>
         <Grid.Row>
           <Grid.Column>
@@ -24,7 +33,7 @@ const Main = () => (
       </Grid>
     </Segment>
 
-    <Segment vertical padded="very">
+    {/* <Segment vertical padded="very">
       <Grid relaxed container>
         <Grid.Column mobile={16} computer={5}>
           <Label ribbon color="orange" size="large">
@@ -72,7 +81,7 @@ const Main = () => (
           ))}
         </Grid.Column>
       </Grid>
-    </Segment>
+    </Segment> */}
   </Container>
 );
 
