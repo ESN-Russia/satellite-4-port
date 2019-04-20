@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import _ from "lodash";
 import ReactMarkdown from "react-markdown";
 
 import { Container, Segment } from "semantic-ui-react";

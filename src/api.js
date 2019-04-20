@@ -1,26 +1,52 @@
-import firebase from "firebase";
+import axios from "axios";
 
-const config = {
-  apiKey: "AIzaSyAHKblcsUlo3ttdZy3xEkYoqwsMIrlBEn4",
-  authDomain: "andresokoldev.firebaseapp.com",
-  databaseURL: "https://andresokoldev.firebaseio.com",
-  projectId: "andresokoldev",
-  storageBucket: "andresokoldev.appspot.com",
-  messagingSenderId: "1086552047105",
+const getUrl = uri => `https://us-central1-andresokoldev.cloudfunctions.net/${uri}`;
+
+const apiGet = uri => axios.get(getUrl(uri));
+
+const getMenuItems = async () => {
+  await apiGet("getMenuItems").then((res) => {
+    console.log("[getMenuItems] Success =", res);
+    window.store.dispatch({
+      type: "GET_MENU_ITEMS",
+      menuItems: res.data,
+    });
+  });
 };
 
-firebase.initializeApp(config);
-
-const DB = firebase.firestore();
-
-const getData = () =>
-  DB.collection("national_boards")
-    .get()
-    .then((querySnapshot) => {
-      console.log(querySnapshot);
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-      });
+const getAboutPage = async () => {
+  await apiGet("getAboutPage").then((res) => {
+    console.log("[getAboutPage] Success =", res);
+    window.store.dispatch({
+      type: "GET_ABOUT",
+      about: res.data,
     });
+  });
+};
 
-export default getData;
+const getBoards = async () => {
+  await apiGet("getBoards").then((res) => {
+    console.log("[getBoards] Success =", res);
+    window.store.dispatch({
+      type: "GET_BOARDS",
+      boards: res.data,
+    });
+  });
+};
+
+const getPages = async () => {
+  await apiGet("getPages").then((res) => {
+    console.log("[getPages] Success =", res);
+    window.store.dispatch({
+      type: "GET_PAGES",
+      pages: res.data,
+    });
+  });
+};
+
+export default {
+  getMenuItems,
+  getAboutPage,
+  getBoards,
+  getPages,
+};

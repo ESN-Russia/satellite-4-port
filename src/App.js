@@ -11,6 +11,8 @@ import Board from "./containers/Board/Board";
 import About from "./containers/About/About";
 import Page from "./containers/Page/Page";
 
+import api from "./api";
+
 class App extends Component {
   state = {}; // FIXME
 
@@ -30,6 +32,11 @@ class App extends Component {
     );
   }
 }
+
+api.getMenuItems();
+api.getAboutPage();
+api.getBoards();
+api.getPages();
 
 const mapStateToProps = state => ({});
 

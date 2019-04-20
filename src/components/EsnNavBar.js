@@ -18,10 +18,18 @@ import EsnMenuButton from "./EsnMenuButton";
 const EsnNavBar = ({ menuItems }) => (
   <NavBarWrapper>
     <SectionSelectorWrapper>
-      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Russia</span>
-      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN HSE MSK</span>
-      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Ural Federal</span>
-      <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN SFTU</span>
+      <a href="https://esnrussia.org/" style={{ color: "unset" }}>
+        <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Russia</span>
+      </a>
+      <a href="https://hsemsk.esnrussia.org/" style={{ color: "unset" }}>
+        <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN HSE MSK</span>
+      </a>
+      <a href="https://ural.esnrussia.org/" style={{ color: "unset" }}>
+        <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN Ural Federal</span>
+      </a>
+      <a href="https://sftu.esnrussia.org/" style={{ color: "unset" }}>
+        <span style={{ cursor: "pointer", padding: "0 10px" }}>ESN SFTU</span>
+      </a>
     </SectionSelectorWrapper>
     <BottomWrapper>
       <Logo src="/RU-DIGITAL-COLOR.png" />

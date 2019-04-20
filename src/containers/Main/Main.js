@@ -1,12 +1,11 @@
 import React from "react";
-import _ from "lodash";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-import { Grid, Label, Container, Segment, Header, Message } from "semantic-ui-react";
+import { Grid, /* Label, */ Container, Segment, Header, Message } from "semantic-ui-react";
 
 import EsnVKWidget from "../../components/EsnVKWidget";
 import EsnFBWidget from "../../components/EsnFBWidget";
-import tempData from "../../tempData";
+// import tempData from "../../tempData";
 
 const Main = () => (
   <Container>
@@ -85,29 +84,29 @@ const Main = () => (
   </Container>
 );
 
-const ItemContainer = styled.div`
-  display: flex;
-  cursor: pointer;
-`;
+// const ItemContainer = styled.div`
+//   display: flex;
+//   cursor: pointer;
+// `;
 
-const ItemImage = styled.img`
-  margin: 15px;
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
-  border: 1px solid #eee;
-  box-sizing: content-box;
-`;
+// const ItemImage = styled.img`
+//   margin: 15px;
+//   width: 60px;
+//   height: 60px;
+//   border-radius: 5px;
+//   border: 1px solid #eee;
+//   box-sizing: content-box;
+// `;
 
-const ItemTitle = styled.a`
-  color: ${props => props.color};
-  font-size: 18px;
-`;
+// const ItemTitle = styled.a`
+//   color: ${props => props.color};
+//   font-size: 18px;
+// `;
 
-const ItemDate = styled.div`
-  color: #666;
-  font-size: 12px;
-  padding: 20px 0 5px 0;
-`;
+// const ItemDate = styled.div`
+//   color: #666;
+//   font-size: 12px;
+//   padding: 20px 0 5px 0;
+// `;
 
 export default Main;
